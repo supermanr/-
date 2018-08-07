@@ -1,13 +1,11 @@
-
-
-$(function() {
+$(function () {
 
   $('#form').bootstrapValidator({
 
     feedbackIcons: {
-      valid: 'glyphicon glyphicon-heart',     // 校验成功
-      invalid: 'glyphicon glyphicon-remove',  // 校验失败
-      validating: 'glyphicon glyphicon-refresh'  // 校验中
+      valid: 'glyphicon glyphicon-heart', // 校验成功
+      invalid: 'glyphicon glyphicon-remove', // 校验失败
+      validating: 'glyphicon glyphicon-refresh' // 校验中
     },
 
     fields: {
@@ -24,6 +22,9 @@ $(function() {
             min: 2,
             max: 6,
             message: "亲,用户名长度必须是2-6位哦!"
+          },
+          callback:{
+            message:"亲,用户名错误哦"
           }
         }
       },
@@ -38,12 +39,38 @@ $(function() {
             min: 6,
             max: 12,
             message: "亲,密码长度必须是6-12位哦!"
+          },
+          callback:{
+            message:"亲,密码错误哦"
           }
+
         }
       }
     }
   });
 
+  $('#form').on("success.form.bv", function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/employee/employeeLogin",
+      type: "post",
+      dataType: "json",
+      data: $("#form").serialize(),
+      success: function (info) {
+        // console.log(info);
+        if(info.success){
+          location.href="index.html"
+        }
+        if(info.error===1001){
+        $("#form").data("bootstrapValidator").updateStatus("password","INVALID" ,"callback")
+        }
+        if(info.error===1000){
+        $("#form").data("bootstrapValidator").updateStatus("username","INVALID","callback")
+        }
+      }
+
+    })
+  });
 
 
 
