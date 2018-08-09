@@ -2,7 +2,7 @@ $(function(){
   var echarts_1 = echarts.init(document.querySelector(".echarts_1"));
   var option1 = {
     title: {
-      text: '2017年注册人数'
+      text: '2018年注册人数'
     },
     tooltip: {
       //trigger: "axis"
