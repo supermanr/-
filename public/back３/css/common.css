@@ -106,7 +106,7 @@ a:active {
 /* .lt_main 的样式 */
 .lt_main {
   height: 2000px;
-  background-color: pink;
+  /* background-color: pink; */
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
@@ -136,4 +136,10 @@ a:active {
   color: #fff;
   text-align: center;
   font-size: 18px;
+}
+
+.lt-content .echarts_1,
+.lt-content .echarts_2{
+  width: 48%;
+  height: 400px;
 }
