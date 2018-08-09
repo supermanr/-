@@ -15,7 +15,7 @@
 <div class="lt_aside">
   <!-- 大标题 -->
   <div class="brand">
-    <a href="#">黑马24期牛逼</a>
+    <a href="#">RP牛逼</a>
   </div>
 
   <!-- 用户 -->
@@ -59,7 +59,22 @@
       <li class="active">分类管理</li>
       <li class="active">一级分类</li>
     </ol>
-
+    <button class="btn mb-20 btn-default">添加分类</button>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>一级分类名</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 挖个坑 -->
+        <!-- <tr>
+          <td>1</td>
+          <td>鹏鹏馆</td>
+        </tr> -->
+      </tbody>
+    </table>
 
   </div>
 
@@ -88,14 +103,23 @@
     </div>
   </div>
 </div>
-
+<script type="text/html" id="tpl">
+  {{each rows v i}}
+  <tr>
+    <td>1</td>
+    <td>鹏鹏馆</td>
+  </tr>
+  {{/each}}
+</script>
 
 
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
-<script src="./js/common.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/first.js"></script>
 
 </body>
 </html>

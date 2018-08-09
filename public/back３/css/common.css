@@ -52,6 +52,9 @@ a:active {
   left: -180px;
 }
 
+.mb-20{
+  margin-bottom: 20px;
+}
 
 .lt_aside .brand {
   width: 180px;
@@ -110,6 +113,7 @@ a:active {
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
+  max-width: 100%;
 }
 .lt_main.hidemenu {
   padding-left: 0px;
@@ -142,4 +146,9 @@ a:active {
 .lt-content .echarts_2{
   width: 48%;
   height: 400px;
+}
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
 }
